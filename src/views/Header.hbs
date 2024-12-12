@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="{{styles 'style.css'}}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{path ''}}">Home</a></li>
+                {{#if loggedIn}}
+                    <li><a href="{{path 'account'}}">Account</a></li>
+                    <li><a href="{{path 'logout'}}">Logout</a></li>
+                {{else}}
+                    <li><a href="{{path 'register'}}">Register</a></li>
+                    <li><a href="{{path 'login'}}">Login</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+    <main>

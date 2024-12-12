@@ -1,0 +1,15 @@
+{{> Header }}
+<h2>Search Songs</h2>
+<form method="POST" action="/songs/search" id="search-form">
+    <div class="search-bar">
+        <input type="text" name="query" placeholder="Search for songs..." required>
+        <button type="submit">Search</button>
+    </div>
+</form>
+<h2>Top Songs</h2>
+<ul class="top-songs">
+    {{#each topSongs}}
+    <li><a href="/songs/{{this.id}}">{{this.title}} by {{this.artist}}, Year: {{this.year}}</a></li>
+    {{/each}}
+</ul>
+{{> Footer }}

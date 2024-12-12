@@ -1,0 +1,17 @@
+{{> Header }}
+<h2>Reviews for {{song.title}} by {{song.artist}}</h2>
+<ul>
+    {{#if reviews.length}}
+        {{#each reviews}}
+        <li>{{this.content}} - by User</li>
+        {{/each}}
+    {{else}}
+        <li>No reviews yet. Be the first to add a review!</li>
+    {{/if}}
+</ul>
+<form action="/songs/{{song.id}}/review" method="post">
+    <textarea name="content" required></textarea>
+    <button type="submit">Add Review</button>
+</form>
+<a href="/songs/{{song.id}}">Back to Song Details</a>
+{{> Footer }}

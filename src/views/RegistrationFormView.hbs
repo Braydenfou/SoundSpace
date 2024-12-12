@@ -1,0 +1,43 @@
+{{> Header }}
+<h1>Registration</h1>
+{{#if errorMessage}}
+    {{ Header }}
+{{/if}}
+<form id="registrationForm" action="/register" method="POST">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+    </div>
+    <button type="submit">Register</button>
+</form>
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        console.log('Form submitted'); // Add this line to check if the form is being submitted
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+
+        if(password !== confirmPassword) {
+            event.preventDefault();
+            var errorDiv = document.querySelector('.error-message');
+            if (!errorDiv) {
+                errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                document.querySelector('form').prepend(errorDiv);
+            }
+            errorDiv.textContent = 'Passwords do not match. Please try again.';
+        }
+    });
+</script>
+{{> Footer }}
