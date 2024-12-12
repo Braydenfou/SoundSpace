@@ -1,4 +1,4 @@
-# SoundSpace
+# SoundSpace 🎵
 
 SoundSpace is a web application that enables users to log in, search for songs, and leave ratings and comments. Built with TypeScript and Handlebars, it follows a Model-View-Controller (MVC) architecture to deliver a smooth user experience.
 
@@ -47,8 +47,7 @@ To run the application, use the following command:
 
 ```bash
 npm start
-
-
+```
 
 ## License
 
